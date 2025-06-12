@@ -37,7 +37,9 @@
                 padding: 2rem;
                 background-color: #f9fafb;
                 border-top: 1px solid #ccc;
-                position: relative;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
                 z-index: 49;
             }
             .hide {
@@ -122,11 +124,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <div>
                         <i data-feather="clock" class="mx-auto mb-2"></i>
-                        <p class="text-lg">Process done in days, not years</p>
+                        <p class="text-lg">File in days, not years</p>
                     </div>
                     <div>
                         <i data-feather="dollar-sign" class="mx-auto mb-2"></i>
-                        <p class="text-lg">Total cost of £50</p>
+                        <p class="text-lg">Costs under £50</p>
                     </div>
                     <div>
                         <i data-feather="file-text" class="mx-auto mb-2"></i>
@@ -175,7 +177,6 @@
                     id="waitlist-form"
                     action="https://formspree.io/f/mvgradpe"
                     method="POST"
-                    onsubmit="handleFormSubmit(event)"
                     class="p-6"
                 >
                     <h3 class="text-2xl font-bold mb-4 text-center">
@@ -297,14 +298,6 @@
 
         <script>
             feather.replace();
-
-            function handleFormSubmit(event) {
-                event.preventDefault();
-                document.getElementById("waitlist-form").style.display = "none";
-                document
-                    .getElementById("form-success")
-                    .classList.remove("hidden");
-            }
 
             function hideSections() {
                 document.getElementById("privacy-section").style.display =
