@@ -34,6 +34,11 @@
             #privacy-section,
             #terms-section {
                 display: none;
+                padding: 2rem;
+                background-color: #f9fafb;
+                border-top: 1px solid #ccc;
+                position: relative;
+                z-index: 49;
             }
             .hide {
                 display: none !important;
@@ -59,9 +64,9 @@
 
         <!-- Hero Section -->
         <section class="py-20 bg-gray-100">
-            <div class="container mx-auto px-4 text-center max-w-3xl">
-                <h2 class="text-4xl font-bold mb-4">
-                    Instant Invention Proof, Without the Legal Maze
+            <div class="container mx-auto px-4 text-center max-w-4xl">
+                <h2 class="text-4xl font-bold mb-4 whitespace-nowrap">
+                    Instant Invention Proof, Without the Legal Mess
                 </h2>
                 <p class="text-lg text-gray-700 mb-6">
                     PrimisAct protects your idea with blockchain, peer review,
@@ -117,11 +122,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <div>
                         <i data-feather="clock" class="mx-auto mb-2"></i>
-                        <p class="text-lg">File in days, not years</p>
+                        <p class="text-lg">Process done in days, not years</p>
                     </div>
                     <div>
                         <i data-feather="dollar-sign" class="mx-auto mb-2"></i>
-                        <p class="text-lg">Costs under £50</p>
+                        <p class="text-lg">Total cost of £50</p>
                     </div>
                     <div>
                         <i data-feather="file-text" class="mx-auto mb-2"></i>
@@ -177,8 +182,8 @@
                         Join the Waitlist
                     </h3>
                     <div style="display: none">
-                        <label>Leave this field empty</label>
-                        <input
+                        <label>Leave this field empty</label
+                        ><input
                             type="text"
                             name="_honeypot"
                             tabindex="-1"
@@ -220,11 +225,55 @@
             </div>
         </section>
 
+        <!-- Policy Sections -->
+        <section
+            id="privacy-section"
+            class="text-sm text-gray-800 text-left px-4 max-w-4xl mx-auto"
+        >
+            <div class="relative">
+                <button
+                    onclick="hideSections()"
+                    class="absolute top-0 right-0 text-xl"
+                >
+                    ×
+                </button>
+                <h4 class="text-lg font-semibold mt-4 mb-2">Privacy Policy</h4>
+                <p>
+                    We respect your privacy. We collect only the necessary data
+                    required for our waitlist and communications. We do not
+                    share your data with third parties unless legally obligated.
+                    All submissions are encrypted and stored securely.
+                </p>
+            </div>
+        </section>
+
+        <section
+            id="terms-section"
+            class="text-sm text-gray-800 text-left px-4 max-w-4xl mx-auto"
+        >
+            <div class="relative">
+                <button
+                    onclick="hideSections()"
+                    class="absolute top-0 right-0 text-xl"
+                >
+                    ×
+                </button>
+                <h4 class="text-lg font-semibold mt-4 mb-2">
+                    Terms & Conditions
+                </h4>
+                <p>
+                    By signing up, you agree to receive updates and product
+                    information from PrimisAct. Joining the waitlist does not
+                    constitute legal protection or a binding service agreement.
+                    All content is subject to change during beta development.
+                </p>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="py-8 bg-black text-white text-center text-sm">
             <p>&copy; 2025 PrimisAct by Merlaz Limited. All rights reserved.</p>
             <p>
-                <a href="mailto:contact@merlaz.com">contact@merlaz.com</a> ·
                 <a href="#" id="privacy-link">Privacy Policy</a> ·
                 <a href="#" id="terms-link">Terms & Conditions</a>
             </p>
@@ -246,9 +295,46 @@
             </button>
         </div>
 
-        <!-- Feather icons init -->
         <script>
             feather.replace();
+
+            function handleFormSubmit(event) {
+                event.preventDefault();
+                document.getElementById("waitlist-form").style.display = "none";
+                document
+                    .getElementById("form-success")
+                    .classList.remove("hidden");
+            }
+
+            function hideSections() {
+                document.getElementById("privacy-section").style.display =
+                    "none";
+                document.getElementById("terms-section").style.display = "none";
+            }
+
+            document
+                .getElementById("privacy-link")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    hideSections();
+                    document.getElementById("privacy-section").style.display =
+                        "block";
+                    document
+                        .getElementById("privacy-section")
+                        .scrollIntoView({ behavior: "smooth" });
+                });
+
+            document
+                .getElementById("terms-link")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    hideSections();
+                    document.getElementById("terms-section").style.display =
+                        "block";
+                    document
+                        .getElementById("terms-section")
+                        .scrollIntoView({ behavior: "smooth" });
+                });
         </script>
     </body>
 </html>
