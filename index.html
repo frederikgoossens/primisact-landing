@@ -147,7 +147,7 @@
         <section class="py-16">
             <div class="container mx-auto px-4 text-center max-w-3xl">
                 <h3 class="text-2xl font-bold mb-4">
-                    Designed by Innovators, for Innovators
+                    Designed to Accelerate Innovation
                 </h3>
                 <p class="text-gray-700">
                     Created by Frederik Goossens (Cambridge EMBA, Blockchain &
@@ -156,11 +156,15 @@
                     Built with legal recognition across UK, EU, US, CH, CN, CA,
                     NZ, AU, and more.
                 </p>
+                <p class="text-gray-700 mt-2">
+                    Currently in the final stages of production. A closed beta
+                    will be rolled out this July.
+                </p>
             </div>
         </section>
 
         <!-- Waitlist Form -->
-        <section id="waitlist" class="py-16">
+        <section id="waitlist" class="py-16 border-t">
             <div class="container mx-auto px-4 max-w-xl">
                 <form
                     id="waitlist-form"
@@ -242,122 +246,9 @@
             </button>
         </div>
 
-        <!-- Privacy Policy Section -->
-        <section
-            id="privacy-section"
-            class="py-10 px-6 max-w-4xl mx-auto text-sm text-gray-700"
-        >
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold">Privacy Policy</h2>
-                <button
-                    onclick="document.getElementById('privacy-section').style.display='none'"
-                    class="text-gray-600 text-lg font-bold"
-                >
-                    ×
-                </button>
-            </div>
-            <p>
-                This website is operated by Merlaz Limited, a Hong
-                Kong–registered company. We collect only the information you
-                submit via the waitlist form. This includes your email and
-                optionally your company name. This data is not shared with third
-                parties and is used solely for communication and service
-                development.
-            </p>
-            <p class="mt-2">
-                Merlaz Limited respects your privacy and complies with GDPR,
-                including rights of access, rectification, and deletion. For any
-                privacy-related requests, please email
-                <a
-                    href="mailto:contact@merlaz.com"
-                    class="underline text-blue-900"
-                    >contact@merlaz.com</a
-                >.
-            </p>
-        </section>
-
-        <!-- Terms and Conditions Section -->
-        <section
-            id="terms-section"
-            class="py-10 px-6 max-w-4xl mx-auto text-sm text-gray-700"
-        >
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold">Terms & Conditions</h2>
-                <button
-                    onclick="document.getElementById('terms-section').style.display='none'"
-                    class="text-gray-600 text-lg font-bold"
-                >
-                    ×
-                </button>
-            </div>
-            <p>
-                By using this site, you agree to general terms regarding
-                cookies, data usage, and privacy as described in our Privacy
-                Policy. Services are experimental and should be used with
-                personal due diligence. Further terms may apply upon full
-                access.
-            </p>
-        </section>
-
+        <!-- Feather icons init -->
         <script>
-            window.formStartTime = Date.now();
-            const privacyLink = document.getElementById("privacy-link");
-            const termsLink = document.getElementById("terms-link");
-            const privacySection = document.getElementById("privacy-section");
-            const termsSection = document.getElementById("terms-section");
-
-            function hideSections() {
-                privacySection.style.display = "none";
-                termsSection.style.display = "none";
-            }
-
-            privacyLink.addEventListener("click", function (event) {
-                event.preventDefault();
-                hideSections();
-                privacySection.style.display = "block";
-                privacySection.scrollIntoView({ behavior: "smooth" });
-            });
-
-            termsLink.addEventListener("click", function (event) {
-                event.preventDefault();
-                hideSections();
-                termsSection.style.display = "block";
-                termsSection.scrollIntoView({ behavior: "smooth" });
-            });
-
-            function handleFormSubmit(event) {
-                event.preventDefault();
-                const form = document.getElementById("waitlist-form");
-                const successMessage = document.getElementById("form-success");
-                const honeypot = form.querySelector('input[name="_honeypot"]');
-                if (honeypot && honeypot.value) {
-                    console.log("Spam detected – honeypot filled.");
-                    return;
-                }
-                if (Date.now() - window.formStartTime < 2000) {
-                    alert("Form submitted too quickly. Please wait a moment.");
-                    return;
-                }
-
-                fetch(form.action, {
-                    method: "POST",
-                    body: new FormData(form),
-                    headers: { Accept: "application/json" },
-                })
-                    .then((response) => {
-                        if (response.ok) {
-                            form.querySelectorAll(
-                                "input, button, label, div[style]",
-                            ).forEach((el) => (el.style.display = "none"));
-                            successMessage.classList.remove("hidden");
-                        } else {
-                            alert("Something went wrong. Please try again.");
-                        }
-                    })
-                    .catch((error) => {
-                        alert("Network error. Please try again.");
-                    });
-            }
+            feather.replace();
         </script>
     </body>
 </html>
