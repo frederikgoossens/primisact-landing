@@ -1,0 +1,7 @@
+# Ignore technical whitepaper
+PrimisAct_ Decentralized Invention Registration – Technical & Legal Foundations.pdf
+
+# Optional: Ignore macOS & Python artifacts
+.DS_Store
+__pycache__/
+*.pyc

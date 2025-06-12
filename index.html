@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PrimisAct – Invention Protection, Without Lawyers</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/feather-icons"></script>
+        <style>
+            #cookie-banner {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background: #f3f4f6;
+                text-align: center;
+                padding: 10px;
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #cookie-close {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            #privacy-section,
+            #terms-section {
+                display: none;
+            }
+        </style>
+    </head>
+    <body class="bg-white text-gray-900">
+        <!-- Header -->
+        <header class="bg-black text-white py-6">
+            <div
+                class="container mx-auto px-4 flex justify-between items-center"
+            >
+                <h1 class="text-2xl font-bold tracking-widest">PRIMISACT</h1>
+                <div>
+                    <a
+                        href="#waitlist"
+                        class="bg-white text-black px-4 py-2 rounded-md font-medium"
+                        >Join the Waitlist</a
+                    >
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4 text-center max-w-3xl">
+                <h2 class="text-4xl font-bold mb-4">
+                    Instant Invention Proof, Without the Legal Maze
+                </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    PrimisAct protects your idea with blockchain, peer review,
+                    and AI, giving you court-admissible proof without patent
+                    lawyers or multi-year waits.
+                </p>
+                <a
+                    href="#waitlist"
+                    class="bg-black text-white px-6 py-3 rounded-md text-lg"
+                    >Get Early Access</a
+                >
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center mb-12">
+                    How It Works
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">1. Submit</h4>
+                        <p>
+                            Upload your invention, idea or proof, encrypted and
+                            timestamped.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">2. Review</h4>
+                        <p>
+                            AI and expert reviewers evaluate novelty,
+                            non-obviousness, and utility.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">3. Protect</h4>
+                        <p>
+                            Your idea is logged on-chain, NDA protected, and
+                            court admissible.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why It Matters -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center mb-12">
+                    Why It Matters
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <i data-feather="clock" class="mx-auto mb-2"></i>
+                        <p class="text-lg">File in days, not years</p>
+                    </div>
+                    <div>
+                        <i data-feather="dollar-sign" class="mx-auto mb-2"></i>
+                        <p class="text-lg">Costs under £50</p>
+                    </div>
+                    <div>
+                        <i data-feather="file-text" class="mx-auto mb-2"></i>
+                        <p class="text-lg">Court-admissible proof</p>
+                    </div>
+                    <div>
+                        <i data-feather="lock" class="mx-auto mb-2"></i>
+                        <p class="text-lg">Strict NDA access</p>
+                    </div>
+                    <div>
+                        <i data-feather="users" class="mx-auto mb-2"></i>
+                        <p class="text-lg">AI + human verification</p>
+                    </div>
+                    <div>
+                        <i data-feather="search" class="mx-auto mb-2"></i>
+                        <p class="text-lg">Breach monitoring enabled</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder / Trust Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4 text-center max-w-3xl">
+                <h3 class="text-2xl font-bold mb-4">
+                    Designed by Innovators, for Innovators
+                </h3>
+                <p class="text-gray-700">
+                    Created by Frederik Goossens (Cambridge EMBA, Blockchain &
+                    Fintech Leader), PrimisAct is designed to give inventors an
+                    instant, defensible alternative to outdated IP systems.
+                    Built with legal recognition across UK, EU, US, CH, CN, CA,
+                    NZ, AU, and more.
+                </p>
+            </div>
+        </section>
+
+        <!-- Waitlist Form -->
+        <section id="waitlist" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 max-w-xl">
+                <h3 class="text-2xl font-bold mb-4 text-center">
+                    Join the Waitlist
+                </h3>
+                <form
+                    action="mailto:contact@merlaz.com"
+                    method="POST"
+                    enctype="text/plain"
+                    class="bg-white p-6 rounded shadow"
+                >
+                    <label class="block mb-2 text-sm font-semibold"
+                        >Email address</label
+                    >
+                    <input
+                        type="email"
+                        class="w-full border border-gray-300 px-4 py-2 mb-4 rounded"
+                        placeholder="you@example.com"
+                    />
+
+                    <label class="block mb-2 text-sm font-semibold"
+                        >Optional: Organisation / Company</label
+                    >
+                    <input
+                        type="text"
+                        class="w-full border border-gray-300 px-4 py-2 mb-4 rounded"
+                        placeholder="Your company name"
+                    />
+
+                    <button class="w-full bg-black text-white py-2 rounded">
+                        Request Access
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 bg-black text-white text-center text-sm">
+            <p>&copy; 2025 PrimisAct by Merlaz Limited. All rights reserved.</p>
+            <p>
+                <a href="mailto:contact@merlaz.com">contact@merlaz.com</a> ·
+                <a href="#" id="privacy-link">Privacy Policy</a> ·
+                <a href="#" id="terms-link">Terms & Conditions</a>
+            </p>
+        </footer>
+
+        <!-- GDPR Cookie Banner -->
+        <div id="cookie-banner">
+            <span
+                id="cookie-close"
+                onclick="document.getElementById('cookie-banner').style.display='none'"
+                >×</span
+            >
+            This website uses cookies to ensure you get the best experience.
+            <button
+                onclick="document.getElementById('cookie-banner').style.display='none'"
+                class="underline text-blue-600 ml-2"
+            >
+                Got it
+            </button>
+        </div>
+
+        <!-- Privacy Policy Section -->
+        <section
+            id="privacy-section"
+            class="py-10 px-6 max-w-4xl mx-auto text-sm text-gray-700"
+        >
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Privacy Policy</h2>
+                <button
+                    onclick="document.getElementById('privacy-section').style.display='none'"
+                    class="text-gray-600 text-lg font-bold"
+                >
+                    ×
+                </button>
+            </div>
+            <p>
+                This website is operated by Merlaz Limited, a Hong
+                Kong–registered company. We collect only the information you
+                submit via the waitlist form. This includes your email and
+                optionally your company name. This data is not shared with third
+                parties and is used solely for communication and service
+                development.
+            </p>
+            <p class="mt-2">
+                Merlaz Limited respects your privacy and complies with GDPR,
+                including rights of access, rectification, and deletion. For any
+                privacy-related requests, please email
+                <a
+                    href="mailto:contact@merlaz.com"
+                    class="underline text-blue-600"
+                    >contact@merlaz.com</a
+                >.
+            </p>
+        </section>
+
+        <!-- Terms and Conditions Section -->
+        <section
+            id="terms-section"
+            class="py-10 px-6 max-w-4xl mx-auto text-sm text-gray-700"
+        >
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Terms & Conditions</h2>
+                <button
+                    onclick="document.getElementById('terms-section').style.display='none'"
+                    class="text-gray-600 text-lg font-bold"
+                >
+                    ×
+                </button>
+            </div>
+            <p>
+                By using this site, you agree to general terms regarding
+                cookies, data usage, and privacy as described in our Privacy
+                Policy. Services are experimental and should be used with
+                personal due diligence. Further terms may apply upon full
+                access.
+            </p>
+        </section>
+
+        <script>
+            feather.replace();
+
+            const privacyLink = document.getElementById("privacy-link");
+            const termsLink = document.getElementById("terms-link");
+            const privacySection = document.getElementById("privacy-section");
+            const termsSection = document.getElementById("terms-section");
+
+            function hideSections() {
+                privacySection.style.display = "none";
+                termsSection.style.display = "none";
+            }
+
+            privacyLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                hideSections();
+                privacySection.style.display = "block";
+                privacySection.scrollIntoView({ behavior: "smooth" });
+            });
+
+            termsLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                hideSections();
+                termsSection.style.display = "block";
+                termsSection.scrollIntoView({ behavior: "smooth" });
+            });
+        </script>
+    </body>
+</html>
