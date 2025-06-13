@@ -171,15 +171,15 @@
         <!-- Waitlist Form -->
         <section id="waitlist" class="py-16 border-t">
             <div class="container mx-auto px-4 max-w-xl">
+                <h3 class="text-2xl font-bold mb-4 text-center">
+                    Join the Waitlist
+                </h3>
                 <form
                     id="waitlist-form"
                     action="https://formspree.io/f/mvgradpe"
                     method="POST"
                     class="p-6"
                 >
-                    <h3 class="text-2xl font-bold mb-4 text-center">
-                        Join the Waitlist
-                    </h3>
                     <div style="display: none">
                         <label>Leave this field empty</label
                         ><input
@@ -224,7 +224,88 @@
             </div>
         </section>
 
-        <!-- Policy Sections -->
+        <!-- Footer -->
+        <footer
+            class="py-8 bg-black text-white text-center text-sm relative z-10"
+        >
+            <p>&copy; 2025 PrimisAct by Merlaz Limited. All rights reserved.</p>
+            <p>
+                <a href="#" id="privacy-link">Privacy Policy</a> ·
+                <a href="#" id="terms-link">Terms & Conditions</a>
+            </p>
+        </footer>
+
+        <!-- GDPR Cookie Banner -->
+        <div id="cookie-banner">
+            <span
+                id="cookie-close"
+                onclick="document.getElementById('cookie-banner').style.display = 'none'; document.body.style.marginBottom = '0';"
+                >×</span
+            >
+            This website uses cookies to ensure you get the best experience.
+            <button
+                onclick="document.getElementById('cookie-banner').style.display = 'none'; document.body.style.marginBottom = '0';"
+                class="underline text-gray-800 ml-2"
+            >
+                Got it
+            </button>
+        </div>
+
+        <script>
+            feather.replace();
+
+            function hideSections() {
+                document.getElementById("privacy-section").style.display =
+                    "none";
+                document.getElementById("terms-section").style.display = "none";
+            }
+
+            document
+                .getElementById("privacy-link")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    hideSections();
+                    const section = document.getElementById("privacy-section");
+                    section.style.display = "block";
+                    section.scrollIntoView({ behavior: "smooth" });
+                });
+
+            document
+                .getElementById("terms-link")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    hideSections();
+                    const section = document.getElementById("terms-section");
+                    section.style.display = "block";
+                    section.scrollIntoView({ behavior: "smooth" });
+                });
+
+            document
+                .getElementById("waitlist-form")
+                .addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    const form = event.target;
+                    const formData = new FormData(form);
+                    const successMessage =
+                        document.getElementById("form-success");
+                    const honeypot = form.querySelector(
+                        'input[name="_honeypot"]',
+                    );
+                    if (honeypot && honeypot.value) return;
+                    fetch(form.action, {
+                        method: "POST",
+                        body: formData,
+                        headers: { Accept: "application/json" },
+                    }).then((response) => {
+                        if (response.ok) {
+                            form.style.display = "none";
+                            successMessage.classList.remove("hidden");
+                        }
+                    });
+                });
+        </script>
+
+        <!-- Policy Sections AFTER Footer -->
         <div
             id="privacy-section"
             class="text-sm text-gray-800 text-left px-4 max-w-4xl mx-auto"
@@ -268,88 +349,5 @@
                 </p>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="py-8 bg-black text-white text-center text-sm">
-            <p>&copy; 2025 PrimisAct by Merlaz Limited. All rights reserved.</p>
-            <p>
-                <a href="#" id="privacy-link">Privacy Policy</a> ·
-                <a href="#" id="terms-link">Terms & Conditions</a>
-            </p>
-        </footer>
-
-        <!-- GDPR Cookie Banner -->
-        <div id="cookie-banner">
-            <span
-                id="cookie-close"
-                onclick="document.getElementById('cookie-banner').remove(); document.body.style.marginBottom = '0';"
-                >×</span
-            >
-            This website uses cookies to ensure you get the best experience.
-            <button
-                onclick="document.getElementById('cookie-banner').remove(); document.body.style.marginBottom = '0';"
-                class="underline text-gray-800 ml-2"
-            >
-                Got it
-            </button>
-        </div>
-
-        <script>
-            feather.replace();
-
-            function hideSections() {
-                document.getElementById("privacy-section").style.display =
-                    "none";
-                document.getElementById("terms-section").style.display = "none";
-            }
-
-            document
-                .getElementById("privacy-link")
-                .addEventListener("click", function (e) {
-                    e.preventDefault();
-                    hideSections();
-                    document.getElementById("privacy-section").style.display =
-                        "block";
-                    document
-                        .getElementById("privacy-section")
-                        .scrollIntoView({ behavior: "smooth" });
-                });
-
-            document
-                .getElementById("terms-link")
-                .addEventListener("click", function (e) {
-                    e.preventDefault();
-                    hideSections();
-                    document.getElementById("terms-section").style.display =
-                        "block";
-                    document
-                        .getElementById("terms-section")
-                        .scrollIntoView({ behavior: "smooth" });
-                });
-
-            document
-                .getElementById("waitlist-form")
-                .addEventListener("submit", function (event) {
-                    event.preventDefault();
-                    const form = event.target;
-                    const formData = new FormData(form);
-                    const successMessage =
-                        document.getElementById("form-success");
-                    const honeypot = form.querySelector(
-                        'input[name="_honeypot"]',
-                    );
-                    if (honeypot && honeypot.value) return;
-                    fetch(form.action, {
-                        method: "POST",
-                        body: formData,
-                        headers: { Accept: "application/json" },
-                    }).then((response) => {
-                        if (response.ok) {
-                            form.classList.add("hidden");
-                            successMessage.classList.remove("hidden");
-                        }
-                    });
-                });
-        </script>
     </body>
 </html>
