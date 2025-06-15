@@ -251,8 +251,78 @@
             </button>
         </div>
 
+        <div
+            id="privacy-section"
+            class="text-sm text-gray-800 text-left px-4 max-w-4xl mx-auto"
+        >
+            <div class="relative">
+                <button
+                    onclick="hideSections()"
+                    class="absolute top-0 right-0 text-xl"
+                >
+                    ×
+                </button>
+                <h4 class="text-lg font-semibold mt-4 mb-2">Privacy Policy</h4>
+                <p>
+                    We respect your privacy. We collect only the necessary data
+                    required for our waitlist and communications. We do not
+                    share your data with third parties unless legally obligated.
+                    All submissions are encrypted and stored securely.
+                </p>
+            </div>
+        </div>
+
+        <div
+            id="terms-section"
+            class="text-sm text-gray-800 text-left px-4 max-w-4xl mx-auto"
+        >
+            <div class="relative">
+                <button
+                    onclick="hideSections()"
+                    class="absolute top-0 right-0 text-xl"
+                >
+                    ×
+                </button>
+                <h4 class="text-lg font-semibold mt-4 mb-2">
+                    Terms & Conditions
+                </h4>
+                <p>
+                    By signing up, you agree to receive updates and product
+                    information from PrimisAct. Joining the waitlist does not
+                    constitute legal protection or a binding service agreement.
+                    All content is subject to change during beta development.
+                </p>
+            </div>
+        </div>
+
         <script>
             feather.replace();
+
+            function hideSections() {
+                document.getElementById("privacy-section").style.display =
+                    "none";
+                document.getElementById("terms-section").style.display = "none";
+            }
+
+            document
+                .getElementById("privacy-link")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    hideSections();
+                    const section = document.getElementById("privacy-section");
+                    section.style.display = "block";
+                    section.scrollIntoView({ behavior: "smooth" });
+                });
+
+            document
+                .getElementById("terms-link")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    hideSections();
+                    const section = document.getElementById("terms-section");
+                    section.style.display = "block";
+                    section.scrollIntoView({ behavior: "smooth" });
+                });
         </script>
     </body>
 </html>
