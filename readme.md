@@ -23,7 +23,15 @@ python3 -m http.server 8080
 Then visit: [http://localhost:8080](http://localhost:8080)
 
 ## License
-MIT (or specify custom if needed)
+Copyright (c) 2025 Frederik Goossens / Merlaz Limited
+
+All rights reserved.
+
+This source code is proprietary and confidential. Unauthorized copying of this file, via any medium, is strictly prohibited.
+
+No rights are granted to modify, distribute, sublicense, or otherwise reuse this software unless explicit written permission is obtained from the copyright holder.
+
+For licensing inquiries, please contact: frederik@merlaz.com
 
 ---
 
