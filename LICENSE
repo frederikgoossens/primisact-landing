@@ -1,9 +1,18 @@
-Copyright (c) 2025 Frederik Goossens / Merlaz Limited
+Business Source License 1.1
 
-All rights reserved.
+Licensor: Frederik Goossens / PrimisAct
+Licensed Work: The PrimisAct landing page (HTML/CSS/JS and all associated assets).
+Change Date: 1 July 2027
+Change License: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
 
-This source code is proprietary and confidential. Unauthorized copying of this file, via any medium, is strictly prohibited.
+Use Grant:
+You may view and test the landing page.
+You may **not** reuse, republish, fork, or adapt it in any form — commercial or non-commercial — before the Change Date.
+Forking, hosting, or repurposing the layout, wording, or structure is prohibited.
 
-No rights are granted to modify, distribute, sublicense, or otherwise reuse this software unless explicit written permission is obtained from the copyright holder.
+This landing page is not open-source.
 
-For licensing inquiries, please contact: frederik@merlaz.com
+For full BSL terms: https://mariadb.com/bsl11/
+For CC BY-NC-ND terms after the Change Date: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+SPDX-License-Identifier: BSL-1.1

@@ -23,15 +23,14 @@ python3 -m http.server 8080
 Then visit: [http://localhost:8080](http://localhost:8080)
 
 ## License
-Copyright (c) 2025 Frederik Goossens / Merlaz Limited
 
-All rights reserved.
+This landing page is licensed under the Business Source License 1.1.
 
-This source code is proprietary and confidential. Unauthorized copying of this file, via any medium, is strictly prohibited.
+You may **not** copy, fork, or reuse it until **1 July 2027**. After that, it will be licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
-No rights are granted to modify, distribute, sublicense, or otherwise reuse this software unless explicit written permission is obtained from the copyright holder.
+This repo is not open-source.
 
-For licensing inquiries, please contact: frederik@merlaz.com
+For enquires: frederik@merlaz.com
 
 ---
 
